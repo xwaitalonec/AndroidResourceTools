@@ -32,7 +32,7 @@ class ResToolsPlugin implements Plugin<Project> {
         project.extensions.create('resConfig', ResToolsConfiguration.class)
 
         // === Create Task
-        project.tasks.create(["name": "replaceResName", "group": "resourceTools"]) << {
+        project.tasks.create(["name": "replaceResName", "group": "resourceTools"])  {
             if (!project.android) {
                 throw new IllegalStateException('Must apply \'com.android.application\' or \'com.android.library\' first!')
             }
